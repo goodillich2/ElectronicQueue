@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!--<html lang="en" xmlns:th="http://thymeleaf.org">-->
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<!--<p th:text="'Hello, ' + ${name} + '!'" />-->
+<div class="row justify-content-center mb-3 mt-3">
+    <div class="col-auto">
+        <table class="table table-responsive">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="person: ${personList}">
+                <td scope="row" th:text="${person.name}"/>
+                <td th:text="${person.surname}"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+<div class="row justify-content-center">
+    <form method="post" action="/">
+        <div class="form-inline">
+            <input type="text" class="form-control" name="name" placeholder="Enter name">
+            <input type="text" class="form-control" name="surname" placeholder="Enter surname">
+            <button type="submit" class="btn btn-outline-success">Add to queue</button>
+        </div>
+    </form>
+</div>
+
+
+</body>
+</html>
